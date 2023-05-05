@@ -13,7 +13,7 @@ using Reg32 = XSharp.Tokens.Reg32;
 using Size = XSharp.Tokens.Size;
 using Return = XSharp.Tokens.Return;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     /// <summary>
     /// Class that processes conditional branches for X#.
     /// </summary>

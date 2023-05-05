@@ -4,7 +4,7 @@ using XSharp.Assembler.ARM;
 using XSharp.Tokens;
 using XSharp.ARM;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     /// <summary>
     /// IN and OUT functions from assembly <br/>
     /// This instruction is only useful for accessing I/O ports located in the processor's I/O address space. <br/>

@@ -1,6 +1,11 @@
 ﻿using System;
 
+#if ARM
+using XSharp.Assembler.ARM.SSE;
+#else
 using XSharp.Assembler.x86.SSE;
+#endif
+
 using static XSharp.XSRegisters;
 
 namespace XSharp

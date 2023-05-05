@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+
+#if ARM
+using XSharp.ARM.Assemblers;
+#else
 using XSharp.x86.Assemblers;
+#endif
 
 namespace XSharp
 {
@@ -156,6 +161,23 @@ namespace XSharp
             mNASM = new NASM(aOut);
 
             mTokenMap = new Spruce.Tokens.Root();
+
+
+#if ARM
+            mTokenMap.AddEmitter(new ARM.Emitters.Namespace(this, mNASM));
+            mTokenMap.AddEmitter(new ARM.Emitters.Comments(this, mNASM));
+            mTokenMap.AddEmitter(new ARM.Emitters.Ports(this, mNASM));
+            mTokenMap.AddEmitter(new ARM.Emitters.ZeroParamOps(this, mNASM)); // This should be above push/pop
+            mTokenMap.AddEmitter(new ARM.Emitters.IncrementDecrement(this, mNASM)); // This should be above + operator
+            mTokenMap.AddEmitter(new ARM.Emitters.PushPop(this, mNASM)); // This should be above + operator
+            mTokenMap.AddEmitter(new ARM.Emitters.Assignments(this, mNASM));
+            mTokenMap.AddEmitter(new ARM.Emitters.Test(this, mNASM));
+            mTokenMap.AddEmitter(new ARM.Emitters.Math(this, mNASM));
+            mTokenMap.AddEmitter(new ARM.Emitters.ShiftRotate(this, mNASM));
+            mTokenMap.AddEmitter(new ARM.Emitters.Branching(this, mNASM));
+            mTokenMap.AddEmitter(new ARM.Emitters.BitwiseEmitters(this, mNASM));
+            mTokenMap.AddEmitter(new ARM.Emitters.AllEmitters(this, mNASM));
+#else
             mTokenMap.AddEmitter(new x86.Emitters.Namespace(this, mNASM));
             mTokenMap.AddEmitter(new x86.Emitters.Comments(this, mNASM));
             mTokenMap.AddEmitter(new x86.Emitters.Ports(this, mNASM));
@@ -169,6 +191,9 @@ namespace XSharp
             mTokenMap.AddEmitter(new x86.Emitters.Branching(this, mNASM));
             mTokenMap.AddEmitter(new x86.Emitters.BitwiseEmitters(this, mNASM));
             mTokenMap.AddEmitter(new x86.Emitters.AllEmitters(this, mNASM));
+#endif
+
+
         }
 
         public void WriteLine(string aText = "")

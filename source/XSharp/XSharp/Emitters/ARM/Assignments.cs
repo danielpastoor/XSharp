@@ -9,7 +9,7 @@ using Reg08 = XSharp.Tokens.Reg08;
 using Reg16 = XSharp.Tokens.Reg16;
 using Reg32 = XSharp.Tokens.Reg32;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     /// <summary>
     /// The class that provides assignments for different types.
     /// </summary>

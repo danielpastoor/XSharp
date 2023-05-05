@@ -3,7 +3,7 @@ using XSharp.Assembler.ARM;
 using XSharp.Tokens;
 using XSharp.ARM;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     /// <summary>
     /// TEST: Logical compare
     /// </summary>

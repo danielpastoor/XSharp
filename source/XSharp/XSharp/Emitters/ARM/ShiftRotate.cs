@@ -3,7 +3,7 @@ using Spruce.Attribs;
 using XSharp.ARM;
 using XSharp.Tokens;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     /// <summary>
     /// Class that performs shift and rotate assmebly operations
     /// </summary>

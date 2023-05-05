@@ -1,4 +1,4 @@
-﻿namespace XSharp.Emitters.ARM {
+﻿namespace XSharp.ARM.Emitters {
     public abstract class Emitters {
         protected Compiler Compiler { get; }
         protected XSharp.ARM.Assemblers.Assembler Asm { get; }

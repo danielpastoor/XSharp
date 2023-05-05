@@ -1,7 +1,13 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using XSharp.Assembler;
+
+#if ARM
+using XSharp.Assembler.ARM;
+#else
 using XSharp.Assembler.x86;
+#endif
+
 using static XSharp.XSRegisters;
 using Label = XSharp.Assembler.Label;
 

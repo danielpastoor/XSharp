@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
+#if ARM
+using XSharp.Assembler.ARM;
+#else
 using XSharp.Assembler.x86;
+#endif
 
 namespace XSharp
 {

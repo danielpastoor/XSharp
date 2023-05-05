@@ -1,4 +1,8 @@
-﻿using XSharp.Assembler.x86.SSE;
+﻿#if ARM
+using XSharp.Assembler.ARM.SSE;
+#else
+using XSharp.Assembler.x86.SSE;
+#endif
 
 namespace XSharp
 {

@@ -1,4 +1,8 @@
-﻿using XSharp.x86.Params;
+﻿#if ARM
+using XSharp.ARM.Params;
+#else
+using XSharp.x86.Params;
+#endif
 
 namespace XSharp.Tokens
 {

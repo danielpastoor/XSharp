@@ -2,7 +2,7 @@
 using XSharp.ARM;
 using XSharp.Tokens;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     /// <summary>
     /// Operations without any parameters
     /// </summary>

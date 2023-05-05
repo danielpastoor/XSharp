@@ -1,7 +1,13 @@
 ﻿using System;
 
+#if ARM
+using XSharp.Assembler.ARM.SSE;
+using XSharp.Assembler.ARM.x87;
+#else
 using XSharp.Assembler.x86.SSE;
 using XSharp.Assembler.x86.x87;
+#endif
+
 
 namespace XSharp
 {

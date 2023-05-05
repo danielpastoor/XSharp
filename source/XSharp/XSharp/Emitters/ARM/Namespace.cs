@@ -2,7 +2,7 @@
 using Spruce.Tokens;
 using XSharp.Tokens;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     /// <summary>
     /// Namespaces for X# files. All files must start with a namespace.
     /// </summary>

@@ -6,7 +6,7 @@ using XSharp.Tokens;
 using System.Linq;
 using XSharp.ARM;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     // Emitters does the actual translation from X# (via Spruce) to x86 (via Assemblers)
     public class AllEmitters : Emitters {
         public AllEmitters(Compiler aCompiler, XSharp.ARM.Assemblers.Assembler aAsm) : base(aCompiler, aAsm) {

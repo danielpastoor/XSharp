@@ -1,7 +1,11 @@
-﻿using XSharp.x86;
+﻿#if ARM
+using XSharp.ARM;
+#else
+using XSharp.x86;
+#endif
 
-namespace XSharp.Tokens
-{
+
+namespace XSharp.Tokens {
     public class ZeroParamOp : Spruce.Tokens.AlphaNumList {
         protected OpCode mOpCode;
 
@@ -20,17 +24,37 @@ namespace XSharp.Tokens
     }
 
     public class Return : ZeroParamOp {
+#if ARM
+
+        public Return() : base("Return", OpCode.Bx_Lr) {
+        }
+#else
+
         public Return() : base("Return", OpCode.Ret) {
         }
+#endif
+
     }
 
     public class PushAll : ZeroParamOp {
-        public PushAll() : base("+All", OpCode.PushAD) {
+#if ARM
+        public PushAll() : base("+All", OpCode.Add1) { // TODO Fix this | Wrong usage
         }
+#else
+ public PushAll() : base("+All", OpCode.PushAD) {
+    }
+#endif
     }
 
     public class PopAll : ZeroParamOp {
-        public PopAll() : base("-All", OpCode.PopAD) {
+#if ARM
+        public PopAll() : base("-All", OpCode.Pop) { // TODO Fix this | Wrong usage
         }
+#else
+        public PopAll() : base("-All", OpCode.PopAD) {
+}
+#endif
+
+
     }
 }

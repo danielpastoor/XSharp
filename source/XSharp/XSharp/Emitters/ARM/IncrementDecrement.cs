@@ -4,7 +4,7 @@ using XSharp.Assembler.ARM;
 using XSharp.Tokens;
 using XSharp.ARM;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     /// <summary>
     /// Class that performs increment and decrement assmebly operations
     /// </summary>

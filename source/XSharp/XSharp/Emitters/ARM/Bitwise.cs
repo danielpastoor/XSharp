@@ -5,7 +5,7 @@ using XSharp.Assembler.ARM;
 using XSharp.Tokens;
 using XSharp.ARM;
 
-namespace XSharp.Emitters.ARM {
+namespace XSharp.ARM.Emitters {
     // Emitters does the actual translation from X# (via Spruce) to x86 (via Assemblers)
     public class BitwiseEmitters : Emitters {
         public BitwiseEmitters(Compiler aCompiler, XSharp.ARM.Assemblers.Assembler aAsm) : base(aCompiler, aAsm) {
