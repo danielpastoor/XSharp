@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+
+#if ARM
+using XSharp.Assembler.ARM;
+#else
 using XSharp.Assembler.x86;
+#endif
 
 namespace XSharp
 {
